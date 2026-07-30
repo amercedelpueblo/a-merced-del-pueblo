@@ -208,6 +208,160 @@
   .ficha:nth-child(3) .sello{border-color:var(--crema); color:var(--crema);}
   .ficha:nth-child(3) .lista{color:var(--mostaza); border-top-color:rgba(240,234,214,0.3);}
 
+  /* ===== ARCHIVO COMPLETO (reseñas) ===== */
+  .archivo{
+    background:var(--crema);
+    border-top:6px solid var(--negro);
+  }
+  .resena{
+    max-width:760px;
+    margin:0 auto;
+    padding:5vw 0;
+    border-bottom:2px solid var(--negro);
+  }
+  .resena:last-child{border-bottom:none;}
+  .resena-eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--rojo);
+    display:block;
+    margin-bottom:0.6rem;
+  }
+  .resena-title{
+    font-size:clamp(1.8rem, 4.5vw, 3rem);
+    line-height:1;
+    margin-bottom:0.3rem;
+  }
+  .resena-artista{
+    font-family:'Space Mono', monospace;
+    font-size:0.95rem;
+    color:var(--azul);
+    margin-bottom:1.8rem;
+  }
+  .resena-meta{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border-top:1px solid var(--negro);
+    border-bottom:1px solid var(--negro);
+    padding:0.8rem 0;
+    margin-bottom:2.2rem;
+  }
+  .resena-body h4{
+    font-family:'Anton', sans-serif;
+    text-transform:uppercase;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+    margin:2rem 0 0.8rem;
+    padding-left:0.9rem;
+    border-left:4px solid var(--rojo);
+  }
+  .resena-body h4:first-child{margin-top:0;}
+  .resena-body p{
+    font-size:1.05rem;
+    line-height:1.7;
+    margin-bottom:1.1rem;
+  }
+  .resena-cita{
+    font-family:'Space Mono', monospace;
+    font-style:normal;
+    font-size:1rem;
+    line-height:1.6;
+    border-left:4px solid var(--mostaza);
+    padding-left:1.2rem;
+    margin:1.8rem 0;
+    color:var(--negro);
+  }
+
+  /* ===== NAV ===== */
+  .nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 6vw;
+    background:rgba(240,234,214,0.92);
+    backdrop-filter:blur(4px);
+    border-bottom:2px solid var(--negro);
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .nav-brand{font-weight:700; color:var(--rojo);}
+  .nav-links{display:flex; gap:1.6rem; flex-wrap:wrap;}
+  .nav-links a{
+    color:var(--negro);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:border-color 0.15s ease;
+  }
+  .nav-links a:hover{border-color:var(--rojo);}
+  body{padding-top:0;}
+  .hero{padding-top:12vw;}
+  @media (max-width:820px){
+    .nav{flex-direction:column; align-items:flex-start; gap:0.6rem;}
+    .nav-links{gap:1rem; font-size:0.65rem;}
+    .hero{padding-top:20vw;}
+  }
+
+  /* ===== COLABORA ===== */
+  .colabora{
+    background:var(--mostaza);
+    color:var(--negro);
+    border-top:6px solid var(--negro);
+    text-align:left;
+  }
+  .colabora-title{
+    font-size:clamp(2rem, 6vw, 4rem);
+    max-width:16ch;
+    margin-bottom:1.5rem;
+  }
+  .colabora p{
+    font-size:1.15rem;
+    line-height:1.6;
+    max-width:56ch;
+    margin-bottom:2.2rem;
+  }
+  .colabora-cta{
+    display:inline-block;
+    background:var(--negro);
+    color:var(--crema);
+    font-family:'Space Mono', monospace;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:1rem 2rem;
+    border:2px solid var(--negro);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .colabora-cta:hover{background:transparent; color:var(--negro);}
+  .colabora-roles{
+    margin-top:2.5rem;
+    display:flex;
+    gap:2px;
+    flex-wrap:wrap;
+    background:var(--negro);
+  }
+  .colabora-roles span{
+    background:var(--mostaza);
+    padding:0.6rem 1.1rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
   /* ===== CONTACTO ===== */
   .contacto{
     background:var(--negro);
@@ -265,7 +419,18 @@
 </head>
 <body>
 
-  <section class="hero">
+  <nav class="nav">
+    <span class="nav-brand">a merced del pueblo</span>
+    <div class="nav-links">
+      <a href="#sobre">sobre</a>
+      <a href="#contenido">contenido</a>
+      <a href="#archivo">reseñas</a>
+      <a href="#colabora">colabora</a>
+      <a href="#contacto">contacto</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="inicio">
     <div class="eyebrow-row">
       <span class="dot"></span>
       <span class="eyebrow">archivo sonoro popular — santiago, chile</span>
@@ -276,7 +441,7 @@
     <div class="scroll-cue">bajar</div>
   </section>
 
-  <section class="section about">
+  <section class="section about" id="sobre">
     <span class="section-label">ficha 01 — quién escribe esto</span>
     <div class="about-grid">
       <div>
@@ -292,7 +457,7 @@
     </div>
   </section>
 
-  <section class="section contenido">
+  <section class="section contenido" id="contenido">
     <span class="section-label">ficha 02 — qué se publica</span>
     <h2 class="titulo-seccion display">Tres archivos, un mismo oído.</h2>
     <div class="fichas">
@@ -307,6 +472,7 @@
           GONZÁLEZ Y LOS ASISTENTES<br>
           CALAMARO
         </div>
+        <a href="#archivo" style="display:inline-block; margin-top:1.2rem; font-family:'Space Mono', monospace; font-size:0.75rem; text-decoration:underline; color:var(--negro);">leer reseñas completas →</a>
       </div>
       <div class="ficha">
         <span class="sello">doc. 02</span>
@@ -321,7 +487,118 @@
     </div>
   </section>
 
-  <section class="section contacto">
+  <section class="section archivo" id="archivo">
+    <span class="section-label">ficha 04 — archivo completo</span>
+    <h2 class="titulo-seccion display">Las reseñas, enteras.</h2>
+
+    <article class="resena" id="hesse-kassel">
+      <span class="resena-eyebrow">morir saltando — crítica</span>
+      <h3 class="resena-title display">Morir Saltando</h3>
+      <div class="resena-artista">Hesse Kassel</div>
+      <div class="resena-meta">
+        <span>15 jul 2026 — Amuleto</span>
+        <span>6 temas · 44 min</span>
+      </div>
+      <div class="resena-body">
+        <h4>¿Qué es Hesse Kassel?</h4>
+        <p>Hesse Kassel es un sexteto nacido en STGO en 2022, dentro del post-rock y art-rock con tintes de noise y math rock. Su debut <em>La Brea</em>, lanzado en 2025, terminó por coronarse, para los medios internacionales, como uno de los 50 mejores discos del año pasado.</p>
+
+        <h4>El disco nuevo</h4>
+        <p>Este segundo disco se grabó tanto en los estudios Palo Quemado como El Tercero, con Emanuel Irarrazábal en la producción técnica. Compuesto por seis temas, la banda describe a este disco como una "autocrítica hacia <em>La Brea</em>". Temas que tienen que durar lo justo y necesario, ni más ni menos.</p>
+
+        <h4>La crítica</h4>
+        <p>El disco, por si solo, es eficaz. Tiene razón la banda al decir que es una autocrítica en torno a <em>La Brea</em>. Así se nota desde el primer tema. Pornomiseria dura 14 minutos, pero se siente corta: la letra es potente, la parte instrumental es prolija, y esa condensación dice algo importante sobre lo que es Hesse Kassel como banda.</p>
+        <p>Por otro lado, hay temas como <em>Reflejo</em> o <em>Mariposa</em> que bajan la intensidad sin restarle movimiento al disco —una especie de sinfonía que respira antes de volver a acelerar con <em>Sancho Plagio</em> y <em>Tulpa</em>, siendo esta última la conclusión de un disco que parece desordenado, pero que es un caos calculado.</p>
+      </div>
+    </article>
+
+    <article class="resena">
+      <span class="resena-eyebrow">morir saltando — crítica</span>
+      <h3 class="resena-title display">La vida era más corta</h3>
+      <div class="resena-artista">Milo J</div>
+      <div class="resena-body">
+        <h4>Identidad e infancia</h4>
+        <p>El disco abre con "Bajo de la piel", donde la chacarera se cruza con el bandoneón del tango, en una historia profunda que ya deja clara la experimentación de todo el álbum: producción de folclore mezclada con trap, el bombo legüero funcionando casi como un bombo de trap. En "Niño", Milo J recuerda —al menos para nuestros oídos— a Alberto Cortez y Facundo Cabral: ritmos folclóricos muy puntuales, contados en tercera persona, en un momento especialmente emotivo alrededor de la figura del padre.</p>
+
+        <h4>Folklore experimental</h4>
+        <p>Con Trueno en "Gil", el folklore se moderniza sin perder su base. "Ama de mi sol" es una bossa nova dedicada a su madre —"siempre en tus brazos", la declara "dueña de la luz y la felicidad". "Solificándose" mira hacia el norte, entre Jujuy y Atacama, con el bombo legüero funcionando como bombo trap y un bajo que se siente necesario, no decorativo. "Lucía", junto a Soledad, es el punto más folclórico del disco: chacarera con bajos de synth, muy "chaqueño", un verdadero "ritmo de amor salvaje".</p>
+
+        <h4>Duelo y pérdida</h4>
+        <p>La voz femenina de Paula Prieto en "MmmM" es un aporte real, con una letra que golpea de frente: pérdida, duelo y tristeza ("anoche di con los muertos, pues no di con el sol"; "qué sueño espantoso, la veo, la sueño, la extraño"). En "Llora llora", junto a Akriila, la experimentación es total —los bajos le dan un galope a la canción ("camino de la vida"), mientras la letra explora el olvido de la infancia con un sample de Violeta Parra. "Recordé" cierra este tramo con una búsqueda de identidad personal que pasa, inevitablemente, por recordar momentos dolorosos, sobre un ritmo de bossa nova con folclore latinoamericano.</p>
+
+        <h4>Amor efímero</h4>
+        <p>"Cuando el agua hirviendo" trae la frase de Sabina sobre no volver atrás, porque el tiempo ya hizo sus destrozos —relaciones fallidas. "La vida era más corta" sigue esa misma línea: una relación tóxica, y lo efímero de cualquier "para siempre".</p>
+      </div>
+    </article>
+
+    <article class="resena">
+      <span class="resena-eyebrow">a 40 años de...</span>
+      <h3 class="resena-title display">Pateando Piedras</h3>
+      <div class="resena-artista">Los Prisioneros</div>
+      <div class="resena-meta">
+        <span>15 sep 1986 — EMI</span>
+        <span>10 temas · 44 min 48 seg</span>
+      </div>
+      <div class="resena-body">
+        <h4>Contexto</h4>
+        <p>El 15 de septiembre de 1986, una semana después del atentado a Pinochet y bajo estado de sitio, Los Prisioneros lanzaron <em>Pateando Piedras</em> en un show ante menos de cien personas en el mítico Café del Cerro, en Bellavista.</p>
+        <p>Se trata de un disco que combina guitarras eléctricas con bajos de sintetizador y teclados que marcarían al New Wave de nuestro país. Fue grabado en apenas 3 meses, con Jorge González y el ingeniero Alejandro "Caco" Lyon al mando de la producción.</p>
+
+        <h4>Sobre el disco</h4>
+        <p><em>Pateando Piedras</em> fue el primer disco de la banda editado por una multinacional, EMI. El sencillo "Muevan las industrias" se grabó con una Linn Drum —una batería programable que recién llegaba a nuestro país— y los sonidos metálicos que se escuchan los hizo el propio Jorge González golpeando un balón de gas de la cocina de Caco Lyon. El resultado coqueteaba con el tecno europeo de bandas como Depeche Mode, algo que nadie hacía en el Chile de la época —synth-pop con letras que hablaban de cesantía, censura y desigualdad.</p>
+        <p>El disco vendió 5.000 copias en su venta anticipada y llegó a 10.000 poco después —un récord para un grupo "juvenil" chileno de la época—. El lanzamiento oficial se hizo dos meses después, el 1 y 2 de noviembre, con dos recitales a tablero vuelto en el Estadio Chile ante 6.000 personas en total.</p>
+        <p>Este disco sería uno de los discos marcadores de una generación, por su mezcla entre la electrónica —género que aún estaba en pañales en Chile— y el rock, en un contexto de censura hacia la banda en televisión y medios oficiales.</p>
+
+        <h4>Lectura del disco</h4>
+        <p>Desde el primer minuto, el viento te golpea en la cara con "Muevan las industrias", que funciona como el marco conceptual del disco: mostrar lo que estaba sucediendo en Chile.</p>
+        <p>Después te cantan sobre los cuicos y sobre cómo, a veces, el chileno se lamenta por no haber nacido en cuna de oro. Pero también sobre lo cansada que estaba la gente de las injusticias del régimen —"Quieren dinero" bien podría leerse como una crítica al modelo económico de los Chicago Boys— y sobre la marginación juvenil que retrata "El baile de los que sobran".</p>
+        <p>Por otro lado, hay momentos donde González y sus compañeros tantean sonidos que recuerdan a The Cure, como en "Estar Solo" o "Por Favor" —otro guiño a esa onda New Wave que comentábamos.</p>
+        <p>González también mantiene su crítica filosa contra el sistema hegemónico del país y cómo Chile se convirtió en un país sin identidad propia en "Independencia Cultural": ahí rechaza de plano el modelo cultural europeo y apunta directo a un sistema educativo que enseña que la cultura es "algo raro y ajeno", en vez de algo que se construye desde adentro.</p>
+
+        <p class="resena-cita">"Todavía quedan piedras por patear, y gente que sobra por bailar. 15 de septiembre, 40 años."</p>
+      </div>
+    </article>
+
+    <article class="resena" id="gonzalez-asistentes">
+      <span class="resena-eyebrow">morir saltando — crítica</span>
+      <h3 class="resena-title display">Desiertos de amor</h3>
+      <div class="resena-artista">González y Los Asistentes + Raúl Zurita</div>
+      <div class="resena-meta">
+        <span>1 ene 2011 — 4Parlantes</span>
+        <span>10 temas · 37 min 18 seg</span>
+      </div>
+      <div class="resena-body">
+        <h4>Contexto</h4>
+        <p>"Desiertos de amor" es un disco de González y Los Asistentes junto al poeta Raúl Zurita, lanzado en 2011.</p>
+        <p>Son diez poemas de Zurita musicalizados por la banda, liderada por Gonzalo Henríquez —hermano menor de Álvaro Henríquez, vocalista de Los Tres. El resultado mezcla post-rock con poesía, mostrando una fuerte inspiración en la obra de Zurita a través de los pasajes musicales que construye la banda.</p>
+
+        <h4>Sobre el disco</h4>
+        <p>Los poemas abordan, en su mayoría, la dictadura. El propio título dialoga directamente con lo que significó el Plan Cóndor —algo que queda claro en pistas como "Desiertos de amor 1", "2" y "3", además de "Fellattio" y "Una entera mierda". Los textos hablan tanto desde lugares cotidianos como desde la crudeza de haber sido torturado o víctima del Plan Cóndor, describiendo cómo murieron o sufrieron las personas.</p>
+        <p>Hay una combinación clara entre poesía y musicalización, con una compenetración mayor que en otros discos de la banda: existe una fuerte cohesión entre el trabajo de Zurita, Gonzalo Henríquez y González y Los Asistentes. Los pasajes son variados y resaltan la profundidad de los poemas, generando una inmersión que te lleva a pensar que "así fue".</p>
+
+        <h4>La crítica</h4>
+        <p>Es un trabajo muy bien logrado en producción, musicalización y letras — le pondría un 8 de 10. Hay dos canciones, "Condenadamente bien" y "Borracho", que no destacan tanto; el disco funcionaría perfectamente como un álbum de 8 pistas sin ellas. A pesar de eso, sigue siendo un gran trabajo.</p>
+        <p>Es entretenido y digerible —no tan denso de escuchar como podría ser "Lulu" (Lou Reed y Metallica). Es un disco fácil de poner de fondo sin restarle atención a la letra. En 2011 ya se habían intentado cruces similares entre poesía/rock experimental y una figura literaria —como el caso de "Lulu", que no funcionó—, pero aquí González y Los Asistentes logran que encaje totalmente: la banda y el poeta se compenetran, y la música enmarca con precisión los escenarios que Zurita expone.</p>
+
+        <p class="resena-cita">"Desiertos de amor" — el cruce entre poesía y rock que "Lulu" no logró.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="section colabora" id="colabora">
+    <span class="section-label" style="color:var(--negro)">ficha 05 — súmate</span>
+    <h2 class="colabora-title display">¿Quieres ser parte de a merced del pueblo?</h2>
+    <p>Esto se arma escribiendo, discutiendo discos y compartiendo lo que suena esa semana — si tienes algo que aportar, sea una reseña, una entrevista o simplemente buen oído, escribe.</p>
+    <a class="colabora-cta" href="https://instagram.com/amercedelpueblo" target="_blank" rel="noopener">Escríbenos por Instagram</a>
+    <div class="colabora-roles">
+      <span>reseñas</span>
+      <span>entrevistas</span>
+      <span>diseño</span>
+      <span>recomendaciones</span>
+    </div>
+  </section>
+
+  <section class="section contacto" id="contacto">
     <span class="section-label" style="color:var(--mostaza)">ficha 03 — contacto</span>
     <h2 class="contacto-title display">Habla con<br>el archivo.</h2>
     <div class="ficha-id">
