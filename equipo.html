@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipo — A Merced del Pueblo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">a merced del pueblo</a>
+    <div class="nav-links">
+      <a href="index.html#sobre" >sobre</a>
+      <a href="index.html#contenido" >contenido</a>
+      <a href="resenas.html" >reseñas</a>
+      <a href="entrevistas.html" >entrevistas</a>
+      <a href="recomendaciones.html" >recomendaciones</a>
+      <a href="colabora.html" >colabora</a>
+      <a href="equipo.html" class="active">equipo</a>
+      <a href="contacto.html" >contacto</a>
+    </div>
+  </nav>
+
+  <section class="section equipo" id="equipo">
+    <span class="section-label" style="color:var(--mostaza)">ficha 06 — quién está detrás</span>
+    <h2 class="titulo-seccion display" style="color:var(--crema)">Equipo.</h2>
+    <div class="equipo-grid">
+      <div class="persona">
+        <span class="rol">fundador / curador</span>
+        <h4>[tu nombre o alias]</h4>
+        <p>Placeholder — escribe acá una o dos líneas sobre quién sos vos dentro del proyecto: qué escribís, qué criterio le pones a la cuenta.</p>
+      </div>
+      <div class="persona vacante">
+        <p>+ colaborador<br>(cupo abierto)</p>
+      </div>
+      <div class="persona vacante">
+        <p>+ colaborador<br>(cupo abierto)</p>
+      </div>
+    </div>
+
+    <div class="form-columna">
+      <h3>Propón una columna</h3>
+      <p class="form-nota">Este botón abre tu correo con los datos ya redactados — no hay backend detrás, así que no pegues la columna completa acá: mandá un link a un doc o notas. Si querés proponer algo más largo, mejor escríbenos directo por Instagram.</p>
+      <form id="columnaForm">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+        <label for="contacto-form">Instagram o correo</label>
+        <input type="text" id="contacto-form" required>
+        <label for="titulo">Título de la columna</label>
+        <input type="text" id="titulo" required>
+        <label for="link">Link al texto (doc, notas, etc.)</label>
+        <input type="url" id="link">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" placeholder="De qué se trata, por qué te interesa escribirla..."></textarea>
+        <button type="submit" class="form-submit">Enviar propuesta</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const columnaForm = document.getElementById('columnaForm');
+    if(columnaForm){
+      columnaForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const contacto = document.getElementById('contacto-form').value;
+        const titulo = document.getElementById('titulo').value;
+        const link = document.getElementById('link').value;
+        const mensaje = document.getElementById('mensaje').value;
+        const asunto = encodeURIComponent('Propuesta de columna: ' + titulo);
+        const cuerpo = encodeURIComponent(
+          'Nombre: ' + nombre + '\n' +
+          'Contacto: ' + contacto + '\n' +
+          'Título: ' + titulo + '\n' +
+          'Link: ' + link + '\n\n' +
+          'Mensaje:\n' + mensaje
+        );
+        window.location.href = 'mailto:hola@amercedelpueblo.cl?subject=' + asunto + '&body=' + cuerpo;
+      });
+    }
+  </script>
+
+  <footer>A MERCED DEL PUEBLO — ARCHIVO SONORO POPULAR</footer>
+</body>
+</html>
