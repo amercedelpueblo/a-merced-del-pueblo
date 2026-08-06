@@ -468,7 +468,31 @@
   }
   .form-submit:hover{background:#9c1729;}
 
-  /* ===== CONTACTO ===== */
+  /* ===== ENTREVISTAS ===== */
+  .disco-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--crema);
+    background:var(--negro);
+    padding:0.3rem 0.7rem;
+    margin-bottom:0.6rem;
+  }
+  .resena-body h5{
+    font-family:'Space Mono', monospace;
+    font-weight:700;
+    font-size:0.85rem;
+    margin:1rem 0 0.4rem;
+    color:var(--azul);
+  }
+  .cierre-block{
+    margin-top:2.5rem;
+    padding-top:1.5rem;
+    border-top:2px dashed var(--negro);
+  }
+
   .contacto{
     background:var(--negro);
     color:var(--crema);
