@@ -493,6 +493,36 @@
     border-top:2px dashed var(--negro);
   }
 
+  /* ===== GRILLA DE PORTADAS (resenas.html) ===== */
+  .portadas-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:2px;
+    background:var(--negro);
+    margin-bottom:4rem;
+  }
+  .portada-card{
+    position:relative;
+    display:block;
+    height:0;
+    padding-bottom:125%;
+    overflow:hidden;
+    background:var(--negro);
+    text-decoration:none;
+    color:var(--crema);
+  }
+  .portada-card .cover-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.25s ease;
+  }
+  .portada-card:hover .cover-img{
+    transform:scale(1.04);
+  }
+
   .contacto{
     background:var(--negro);
     color:var(--crema);
