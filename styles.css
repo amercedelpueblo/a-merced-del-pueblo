@@ -497,8 +497,8 @@
   .portadas-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-    gap:2px;
-    background:var(--negro);
+    gap:32px;
+    background:transparent;
     margin-bottom:4rem;
   }
   .portada-card{
