@@ -510,6 +510,7 @@
     background:var(--negro);
     text-decoration:none;
     color:var(--crema);
+    border-radius:16px;
   }
   .portada-card .cover-img{
     position:absolute;
