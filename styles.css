@@ -512,6 +512,19 @@
     color:var(--crema);
     border-radius:16px;
   }
+  .portada-card.no-cover{
+    background:repeating-linear-gradient(135deg, var(--negro), var(--negro) 10px, #1c1c1c 10px, #1c1c1c 20px);
+  }
+  .portada-card.no-cover::after{
+    content:attr(data-persona);
+    position:absolute;
+    bottom:16px; left:16px; right:16px;
+    font-family:'Space Mono', monospace;
+    font-size:0.8rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--crema);
+  }
   .portada-card .cover-img{
     position:absolute;
     inset:0;
